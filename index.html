@@ -29,41 +29,54 @@ left: 0;
 width: 20%; /* padding-right of the tw-story element. */
 max-height: 100%;
 margin-top: 5%; /* padding-top of the tw-story element. */
-padding: 0 0.5em 0.5em 2.5em;
+padding: 1em;
+display:inline;
 text-align: left;
 background-color: transparent;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Bus" tags="" position="871,345" size="100,100">
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Bus" tags="" position="870,345" size="100,100">
 The bus number 105 is going round and round the [[street]] with [[people]] in it.
 
 (if: $feelings_activate is &quot;true&quot;)[
 The bus [[feels]]
-(set:$feeling to &quot;true&quot;)
-]
+(set:$feeling to &quot;true&quot;)]
 (if: $thinking_activate is &quot;true&quot;)[
 The bus [[thinks]]
-(set:$thinking to &quot;true&quot;)
-]
+(set:$thinking to &quot;true&quot;)]
 (if: $thinking_meter &gt;10 and $feelings_meter&gt;10)[
 The bus [[perceives]]
 (set:$perceiving to &quot;true&quot;)]
-
 (if: $thinking_meter &gt;30 and $feelings_meter&gt;30)[
 The bus [[connects]]
 (set:$connecting to &quot;true&quot;)]
-</tw-passagedata><tw-passagedata pid="2" name="street" tags="" position="728,380" size="100,100">The street is full of other vehicles. 
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="2" name="street" tags="" position="728,380" size="100,100">The street is full of other vehicles. 
 Out of the window, there&#39;s is a [[Ford Taxi Car]] right next to the bus, follow by a [[Red Volkswagen Car]] and a [[Toyota Van]]. A [[Giant Bicycle]] is dodging all the cars.
 
-
-(if: $thinking_meter &gt;20)[
+(if: $thinking_meter &gt;15)[(after:2s)[
 On a closer look, there&#39;s a [[juggler between the vehicles ]], a[[a motorbike with two people]],[[a pink Kia]],[[a blue Peugeot]], and so on.
-]
+]]
 
-It doesn&#39;t look like the [[Bus]] will move on any time soon.</tw-passagedata><tw-passagedata pid="3" name="people" tags="" position="1034,367" size="100,100">There&#39;s a [[person listening to music]], a [[child singing out loud]], [[someone looking at its cellphone]], [[two people arguing]], and so on.
-(if: $feelings_meter &gt; 20)[
- On a closer look, there&#39;s a [[standing person reading a book]], a [[person eating a sandwich]],[[someone applying makeover]], [[four people playing cards]], and so on.]
+It doesn&#39;t look like the [[Bus]] will move on any time soon.
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Feelings: $feelings_meter%]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="3" name="people" tags="" position="1034,367" size="100,100">There&#39;s a [[person listening to music]], a [[child singing out loud]], [[someone looking at its cellphone]], [[two people arguing]], and so on.
+
+(if: $feelings_meter &gt; 15)[(after:2s)[
+ On a closer look, there&#39;s a [[standing person reading a book]], a [[person eating a sandwich]],[[someone applying makeover]], [[four people playing cards]], and so on.]]
 There is no room for anything else in this [[Bus]]. Not even for a mosquito.
 
-</tw-passagedata><tw-passagedata pid="4" name="person listening to music" tags="" position="1497,522" size="100,100">They have the earplugs rolled up by its shirt.
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Feelings: $feelings_meter%]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="4" name="person listening to music" tags="" position="1497,522" size="100,100">They have the earplugs rolled up by its shirt.
 Slow Bachata is playing.
 
 There is a lot of [[people]] in the [[Bus]] 
@@ -73,8 +86,13 @@ There is a lot of [[people]] in the [[Bus]]
 [ [[Compliment its music-&gt;happy]]
   [[Ignore -&gt;people]] 
 ]
-</tw-passagedata><tw-passagedata pid="5" name="Ford Taxi Car" tags="" position="483,597" size="100,100">The driver is hearing the most popular fascist radio and giving its opinions to the passengers. 
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="5" name="Ford Taxi Car" tags="" position="483,597" size="100,100">The driver is hearing the most popular fascist radio and giving its opinions to the passengers. 
 The passengers seem disgusted and are trying to avoid eye-contact to the driver looking at the [[street]].
+(set:$thinking_activate to &quot;true&quot;)
 
 (if: $thinking is &quot;true&quot;)
 [ (if:($thinking_meter &gt;10))
@@ -82,10 +100,17 @@ The passengers seem disgusted and are trying to avoid eye-contact to the driver 
 (else:)[
 [[Ask to turn the radio off -&gt;stuck]]]
   [[Ignore -&gt;street]] 
-]</tw-passagedata><tw-passagedata pid="6" name="Red Volkswagen Car" tags="" position="627,576" size="100,100">There&#39;s a group of friends. They seem to enjoy being stuck in transit.
+]
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="6" name="Red Volkswagen Car" tags="" position="627,576" size="100,100">There&#39;s a group of friends. They seem to enjoy being stuck in transit.
 They are playing a card came. It seems that the driver is about to win.
 
 Some other vehicles in the [[street]] are watching them.
+(set:$thinking_activate to &quot;true&quot;)
 
 (if: $thinking is &quot;true&quot;)
 [ (if:($thinking_meter &gt;5))
@@ -93,7 +118,13 @@ Some other vehicles in the [[street]] are watching them.
 (else:)[
 [[Help the losing part -&gt;stuck]]]
   [[Ignore -&gt;street]] 
-]</tw-passagedata><tw-passagedata pid="7" name="Toyota Van" tags="" position="753,600" size="100,100">There is a whole family in there. The parents seems exhausted, but the children are jumping happily in the back seat. The dogs are barking.
+]
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="7" name="Toyota Van" tags="" position="753,600" size="100,100">There is a whole family in there. The parents seems exhausted, but the children are jumping happily in the back seat. The dogs are barking.
 
 The vehicle moves very slowly as almost every vehicle on the 
 [[street]].
@@ -102,10 +133,22 @@ The vehicle moves very slowly as almost every vehicle on the
 (if: $thinking is &quot;true&quot;)
 [ [[Boost energy-&gt;move]]
   [[Ignore -&gt;street]] 
-]</tw-passagedata><tw-passagedata pid="8" name="Giant Bicycle" tags="" position="290,471" size="100,100">There&#39;s a person driving it while they drink [[orange juice]].
+]
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="8" name="Giant Bicycle" tags="" position="290,471" size="100,100">There&#39;s a person driving it while they drink [[orange juice]].
 It&#39;s masterfuly evading the other vehicles in the [[street]].
 
-(set:$thinking_active to &quot;true&quot;)</tw-passagedata><tw-passagedata pid="9" name="child singing out loud" tags="" position="1002,605" size="100,100">It&#39;s singing a cumbia out-of-tune with its head tilted up.
+(set:$thinking_active to &quot;true&quot;)
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="9" name="child singing out loud" tags="" position="1002,605" size="100,100">It&#39;s singing a cumbia out-of-tune with its head tilted up.
 
 &quot;Se me ha perdido un corazón
 Si alguien lo tiene, por favor
@@ -124,9 +167,17 @@ The [[people]] of the [[Bus]] doesn&#39;t seem to care.
 (if: $feeling is &quot;true&quot;)
 [ [[Sing Along-&gt;happy]]
   [[Ignore -&gt;people]] 
-]</tw-passagedata><tw-passagedata pid="10" name="someone looking at its cellphone" tags="" position="1285,599" size="100,100">Its mind is one with their phone.Talking in a [[WhatsApp Group]].
+]
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="10" name="someone looking at its cellphone" tags="" position="1285,599" size="100,100">Its mind is one with their phone.Talking in a [[WhatsApp Group]].
 
-</tw-passagedata><tw-passagedata pid="11" name="two people arguing" tags="" position="1489,671" size="100,100">One of the persons is annoyed with one of the men standing next to him. He accuses him of jostling him every time anyone goes past- A snivelling tone which is meant to be aggressive. When he sees a vacant seat he throws himself on to it.
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="11" name="two people arguing" tags="" position="1489,671" size="100,100">One of the persons is annoyed with one of the men standing next to him. He accuses him of jostling him every time anyone goes past- A snivelling tone which is meant to be aggressive. When he sees a vacant seat he throws himself on to it.
 
 A lot of [[people]] are watching in the [[Bus]]
 (set:$feelings_activate to &quot;true&quot;)
@@ -138,7 +189,12 @@ A lot of [[people]] are watching in the [[Bus]]
 [[Try to participate -&gt;sad]]]
   [[Ignore -&gt;people]] 
 ]
-</tw-passagedata><tw-passagedata pid="12" name="WhatsApp Group" tags="" position="1153,606" size="100,100">Name of the group:
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="12" name="WhatsApp Group" tags="" position="1153,606" size="100,100">Name of the group:
 :)o.o:( IDEALS :)o.o:(
 
 Texts:
@@ -158,7 +214,13 @@ There&#39;s is [[people]] around in the [[Bus]].
 (else:)[
 [[Try writing some text -&gt;sad]]]
   [[Ignore -&gt;people]] 
-]</tw-passagedata><tw-passagedata pid="13" name="orange juice" tags="" position="252,634" size="100,100">Seems delicious.
+]
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="13" name="orange juice" tags="" position="252,634" size="100,100">Seems delicious.
 
 The [[people]] in the [[Bus]] would love it. As pretty much everyone in the [[street]].
 
@@ -166,20 +228,26 @@ The [[people]] in the [[Bus]] would love it. As pretty much everyone in the [[st
 [ [[Adore the juice-&gt;move]]
   [[Ignore -&gt;street]] 
 ]
-</tw-passagedata><tw-passagedata pid="14" name="feels" tags="" position="684,191" size="100,100">&quot;I&#39;m full of emotions&quot;
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="14" name="feels" tags="" position="684,191" size="100,100">&quot;I&#39;m full of emotions&quot;
 (If: $feelings_meter &gt; 1)
 [
 Its feelings are at $feelings_meter%
 (append: ?Sidebar)[Feelings: $feelings_meter%]
+(set:$feelings_meter_status to &quot;true&quot;)
 ]
 
 Feels the [[Bus]]
 </tw-passagedata><tw-passagedata pid="15" name="thinks" tags="" position="1080,184" size="100,100">&quot;Where are all these people going?
 Thinks the [[Bus]]
-(set: $thinking_meter_text to &quot;Thinkings: &quot; + (text:$thinking_meter) + &quot;%&quot;)
+(set: $thinking_meter_text to &quot;Thinking: &quot; + (text:$thinking_meter) + &quot;%&quot;)
 (If: $thinking_meter &gt; 1)
-[
-Its thinkings are at $thinking_meter%
+[(set:$thinking_meter_status to &quot;true&quot;)
+Its thinking is at $thinking_meter%
 (append: ?Sidebar)[$thinking_meter_text]
 ]
 
@@ -193,49 +261,108 @@ Its thinkings are at $thinking_meter%
 (set:$connecting to &quot;false&quot;)
 (set:$feelings_meter to 0)
 (set:$thinking_meter to 0)
+(set:$feelings_meter_status to &quot;false&quot;)
+(set:$thinking_meter_status to &quot;false&quot;)
 
-
-</tw-passagedata><tw-passagedata pid="17" name="standing person reading a book" tags="" position="1615,7" size="100,100">The person is reading fiercly. It doesn&#39;t seem to matter the limited space where it is.
+&lt;!--(append: ?Sidebar)[Feelings: $feelings_meter%]--&gt;</tw-passagedata><tw-passagedata pid="17" name="standing person reading a book" tags="" position="1440,37" size="100,100">The person is reading fiercly. It doesn&#39;t seem to matter the limited space where it is.
 
 [[Compliment the book-&gt;happy]]
-[[Move on-&gt;people]] </tw-passagedata><tw-passagedata pid="18" name="person eating a sandwich" tags="" position="1555,152" size="100,100">The sandwich is larger than the person. It doesn&#39;t look that it could be finished. It&#39;s sum of ingredients fill the [[Bus]] with its aroma. Some [[people]] don&#39;t like it.
+[[Move on-&gt;people]] 
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="18" name="person eating a sandwich" tags="" position="1555,152" size="100,100">The sandwich is larger than the person. It doesn&#39;t look that it could be finished. It&#39;s sum of ingredients fill the [[Bus]] with its aroma. Some [[people]] don&#39;t like it.
 
 [ (if:($feelings_meter &gt;25))
 [[[Help with the sandwich diggestion-&gt;happy]]]
 (else:)[
 [[Explain that eating is bad -&gt;sad]]]
   [[Ignore -&gt;people]] 
-]</tw-passagedata><tw-passagedata pid="19" name="someone applying makeover" tags="" position="1543,282" size="100,100">The person is masterfuly applying make-up with the help of a tiny mirror.
+]
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="19" name="someone applying makeover" tags="" position="1543,282" size="100,100">The person is masterfuly applying make-up with the help of a tiny mirror.
 
 [[Compliment its skill-&gt;happy]] 
-[[Ignore-&gt;people]] </tw-passagedata><tw-passagedata pid="20" name="four people playing cards" tags="" position="1538,402" size="100,100">Four people is playing a round of &quot;Truco&quot;. Two of them are standing and grabbing themself to the ceiling. The other two are sitting on top of each other. There is a tense air surrounding them.
+[[Ignore-&gt;people]] 
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="20" name="four people playing cards" tags="" position="1538,402" size="100,100">Four people is playing a round of &quot;Truco&quot;. Two of them are standing and grabbing themself to the ceiling. The other two are sitting on top of each other. There is a tense air surrounding them.
 [ (if:($feelings_meter &gt;30))
 [[[Encourage them-&gt;happy]]]
 (else:)[
 [[Try helping someone to win -&gt;sad]]]
   [[Ignore -&gt;people]] 
-]</tw-passagedata><tw-passagedata pid="21" name="juggler between the vehicles " tags="" position="272,307" size="100,100">It has a beautiful routine, but it&#39;s pretty long. Some vehicles doesn&#39;t have a time to watch it fully.
+]
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="21" name="juggler between the vehicles " tags="" position="272,307" size="100,100">It has a beautiful routine, but it&#39;s pretty long. Some vehicles doesn&#39;t have a time to watch it fully.
 (if:($thinking_meter &gt;25))
 [[[Propose an ending-&gt;move]]]
 (else:)[
 [[Ask to move-&gt;stuck]]]
-[[Ignore -&gt;street]] </tw-passagedata><tw-passagedata pid="22" name="a motorbike with two people" tags="" position="366,167" size="100,100">The person on the back is using the front person&#39;s head as a drum. The front person doesn&#39;t seem to like it.
+[[Ignore -&gt;street]] 
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="22" name="a motorbike with two people" tags="" position="366,167" size="100,100">The person on the back is using the front person&#39;s head as a drum. The front person doesn&#39;t seem to like it.
 
 [[Explain the beauty of the rhythm-&gt;move]]
-[[Ignore -&gt;street]] </tw-passagedata><tw-passagedata pid="23" name="a pink Kia" tags="" position="430,36" size="100,100">There is a person driving the car with one hand and with the other is pocking its nose. It goes pretty deep.
+[[Ignore -&gt;street]] 
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="23" name="a pink Kia" tags="" position="430,36" size="100,100">There is a person driving the car with one hand and with the other is pocking its nose. It goes pretty deep.
 
 [[Compliment its technique-&gt;move]]
-[[Ignore -&gt;street]] </tw-passagedata><tw-passagedata pid="24" name="a blue Peugeot" tags="" position="577,31" size="100,100">Two dogs are happly putting their heads out of the window. The driver seems to be more focused in the dogs rather than the [[street]].
+[[Ignore -&gt;street]] 
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Feelings: $feelings_meter%]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="24" name="a blue Peugeot" tags="" position="577,31" size="100,100">Two dogs are happly putting their heads out of the window. The driver seems to be more focused in the dogs rather than the [[street]].
 
 (if:($thinking_meter &gt;30))
 [[[Train the dogs to get inside and to close the windows-&gt;move]]]
 (else:)[
 [[Salute the dogs-&gt;stuck]]]
-[[Ignore -&gt;street]] </tw-passagedata><tw-passagedata pid="25" name="happy" tags="" position="942,802" size="100,100">The [[Bus]] performs well. The person seems happier.
+[[Ignore -&gt;street]] 
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="25" name="happy" tags="" position="942,802" size="100,100">The [[Bus]] performs well. The person seems happier.
 (put: $feelings_meter + 5 into $feelings_meter)
-</tw-passagedata><tw-passagedata pid="26" name="sad" tags="" position="1057,799" size="100,100">The [[Bus]] performs poorly. The person seems sadder.
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Feelings: $feelings_meter%]]
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="26" name="sad" tags="" position="1058,799" size="100,100">The [[Bus]] performs poorly. The person seems sadder.
 (put: $feelings_meter - 5 into $feelings_meter)
-</tw-passagedata><tw-passagedata pid="27" name="connects" tags="" position="808,188" size="100,100">The [[Bus]] is connected to the Bus Network.
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="27" name="connects" tags="" position="808,188" size="100,100">The [[Bus]] is connected to the Bus Network.
 It has a reach of 5 buses.
 
 The 39 is struggiling.
@@ -245,12 +372,31 @@ The 110 is stuck on traffic.
 The 237 is getting old.
 
 Overall status 9%</tw-passagedata><tw-passagedata pid="28" name="perceives" tags="" position="947,184" size="100,100">The [[Bus]] perceives [[landmarks]] on the [[street]].</tw-passagedata><tw-passagedata pid="29" name="landmarks" tags="" position="869,489" size="100,100">Over the road there are several landmarks of interest. There is a greengrocery with cheap prices, a building set on fire,the congress, a bakery with over two-hundred-metre queue.
-The [[Bus]] is watching them.</tw-passagedata><tw-passagedata pid="30" name="move" tags="" position="746,787" size="100,100">The vehicle is encouraged to perform better and its movements have improved. The traffic on the [[street]] is a bit better.
+The [[Bus]] is watching them.
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Feelings: $feelings_meter%]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="30" name="move" tags="" position="746,787" size="100,100">The vehicle is encouraged to perform better and its movements have improved. The traffic on the [[street]] is a bit better.
 
 The [[Bus]] can move more freely.
-(put: $thinking_meter + 5 into $thinking_meter)</tw-passagedata><tw-passagedata pid="31" name="stuck" tags="" position="555,787" size="100,100">The vehicle seems slower than before. The traffic on the [[street]] intensifies.
+(put: $thinking_meter + 5 into $thinking_meter)
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="31" name="stuck" tags="" position="555,787" size="100,100">The vehicle seems slower than before. The traffic on the [[street]] intensifies.
 The [[Bus]] awaits.
-(put: $thinking_meter - 5 into $thinking_meter)</tw-passagedata></tw-storydata>
+(put: $thinking_meter - 5 into $thinking_meter)
+
+
+(if:$feelings_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
+
+(if:$thinking_meter_status is &quot;true&quot;)[
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
