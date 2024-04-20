@@ -17,6 +17,15 @@ tw-icon[title="Undo"], tw-icon[title="Redo"] {
 tw-story {
 font-family: 'VT323', monospace;
 background-color: #0b0340;
+animation: bus-motion 3s infinite;
+border: 15px double #FFF;
+
+}
+
+@keyframes bus-motion {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); } /* Adjust this value for the highest point */
+  100% { transform: translateY(0); }
 }
 
 tw-link{
@@ -25,7 +34,7 @@ color:#fa89a0;
 tw-sidebar {
 position: fixed;
 top: 0;
-left: 0;
+left: 0%;
 width: 20%; /* padding-right of the tw-story element. */
 max-height: 100%;
 margin-top: 5%; /* padding-top of the tw-story element. */
@@ -33,20 +42,23 @@ padding: 1em;
 display:inline;
 text-align: left;
 background-color: transparent;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Bus" tags="" position="870,345" size="100,100">
+
+}
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Bus" tags="" position="870,345" size="100,100">
 The bus number 105 is going round and round the [[street]] with [[people]] in it.
 
 (if: $feelings_activate is &quot;true&quot;)[
 The bus [[feels]]
 (set:$feeling to &quot;true&quot;)]
 (if: $thinking_activate is &quot;true&quot;)[
-The bus [[thinks]]
+\The bus [[thinks]]
 (set:$thinking to &quot;true&quot;)]
 (if: $thinking_meter &gt;10 and $feelings_meter&gt;10)[
-The bus [[perceives]]
+\The bus [[perceives]]
 (set:$perceiving to &quot;true&quot;)]
 (if: $thinking_meter &gt;30 and $feelings_meter&gt;30)[
-The bus [[connects]]
+\The bus [[connects]]
 (set:$connecting to &quot;true&quot;)]
 
 (if:$feelings_meter_status is &quot;true&quot;)[
@@ -56,19 +68,19 @@ The bus [[connects]]
 (append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="2" name="street" tags="" position="728,380" size="100,100">The street is full of other vehicles. 
 Out of the window, there&#39;s is a [[Ford Taxi Car]] right next to the bus, follow by a [[Red Volkswagen Car]] and a [[Toyota Van]]. A [[Giant Bicycle]] is dodging all the cars.
 
-(if: $thinking_meter &gt;15)[(after:2s)[
-On a closer look, there&#39;s a [[juggler between the vehicles ]], a[[a motorbike with two people]],[[a pink Kia]],[[a blue Peugeot]], and so on.
+(if: $thinking_meter &gt;10)[(after:1s)[
+On a closer look, there&#39;s a [[juggler between the vehicles ]], [[a motorbike with two people]],[[a pink Kia]],[[a blue Peugeot]], and so on.
 ]]
 
 It doesn&#39;t look like the [[Bus]] will move on any time soon.
 
 (if:$feelings_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Feelings: $feelings_meter%]]
+(append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
 (append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="3" name="people" tags="" position="1034,367" size="100,100">There&#39;s a [[person listening to music]], a [[child singing out loud]], [[someone looking at its cellphone]], [[two people arguing]], and so on.
 
-(if: $feelings_meter &gt; 15)[(after:2s)[
+(if: $feelings_meter &gt; 10)[(after:1s)[
  On a closer look, there&#39;s a [[standing person reading a book]], a [[person eating a sandwich]],[[someone applying makeover]], [[four people playing cards]], and so on.]]
 There is no room for anything else in this [[Bus]]. Not even for a mosquito.
 
@@ -233,21 +245,42 @@ The [[people]] in the [[Bus]] would love it. As pretty much everyone in the [[st
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="14" name="feels" tags="" position="684,191" size="100,100">&quot;I&#39;m full of emotions&quot;
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="14" name="feels" tags="" position="684,191" size="100,100">(set:_randomNumber to (random:1,4))
+(If: $feelings_meter &lt;10)[
+\&quot;I&#39;m full of emotions&quot;]
+(elseif:_randomNumber is 1)[
+\As I glide along the bustling streets, I feel a curious mix of emotions swirling within me. There&#39;s a sense of purpose that propels me forward, each stop a beacon calling out to those who seek passage. I am the conduit of journeys, the vessel that connects disparate lives in a fleeting moment of shared space.]
+(elseif:_randomNumber is 2)[
+\With each halt, I open my doors eagerly, inviting travelers to step into my embrace. Their footsteps echo within my chamber, a symphony of movement that resonates with the rhythm of the city. I carry them through the arteries of asphalt, navigating the maze of streets with practiced ease.]
+(elseif:_randomNumber is 3)[
+\Beneath my sturdy exterior lies a quiet longing, an unspoken desire to break free from the confines of my predetermined path. I yearn to roam the open road, to explore uncharted territories beyond the city limits. Yet, I remain tethered to my duty, bound by the invisible threads of obligation that tie me to this urban landscape.]
+(elseif:_randomNumber is 4)[
+\As the day wears on and the sun dips below the horizon, I continue my journey into the night. Each passing moment brings me closer to my destination, yet I am always in motion, forever chasing the fleeting horizon. For within me beats the heart of a guardian, a silent sentinel of the streets, bound by the unspoken contract between traveler and transport.]
 (If: $feelings_meter &gt; 1)
-[
-Its feelings are at $feelings_meter%
-(append: ?Sidebar)[Feelings: $feelings_meter%]
+[(append: ?Sidebar)[Feelings: $feelings_meter%]
 (set:$feelings_meter_status to &quot;true&quot;)
 ]
 
 Feels the [[Bus]]
-</tw-passagedata><tw-passagedata pid="15" name="thinks" tags="" position="1080,184" size="100,100">&quot;Where are all these people going?
-Thinks the [[Bus]]
+</tw-passagedata><tw-passagedata pid="15" name="thinks" tags="" position="1080,184" size="100,100">(set:_randomNumber to (random:1,6))
+(If: $thinking_meter &lt;10)[
+\&quot;Where are all these people going?]
+(elseif:_randomNumber is 1)[
+\As I traverse the city streets, I find myself immersed in the intricate dance of traffic, a choreography shaped by the collective actions of countless individuals. Each vehicle represents a unique story, a fragment of the larger narrative of urban life.]
+(elseif:_randomNumber is 2)[
+\From my vantage point, I observe the rhythms of the city, the pulsating flow of cars and pedestrians moving in harmony or clashing in discord. Traffic lights govern our movements, dictating when we must yield and when we may proceed, symbolizing the delicate balance between order and chaos.]
+(elseif:_randomNumber is 3)[
+\But beyond the mechanics of navigation, there lies a deeper sociological tapestry. I am not merely a bus, but a microcosm of society in motion. Within my walls, I bear witness to the diversity of humanity, a melting pot of cultures, ages, and socioeconomic backgrounds.]
+(elseif:_randomNumber is 4)[
+\In the symphony of honking horns and screeching brakes, I hear the echoes of societal tensions and disparities. The hurried pace of the business commuter contrasts with the languid stroll of the leisurely tourist. The affluent passenger occupies a different world from the struggling student or blue-collar worker.]
+(elseif:_randomNumber is 5)[
+\There are moments of unity and solidarity. Strangers bond over shared experiences, whether it&#39;s commiserating over a delayed journey or celebrating a chance encounter. In these fleeting connections, the barriers of social stratification momentarily dissolve, reminding us of our common humanity.]
+(elseif:_randomNumber is 6)[
+\As I navigate the labyrinth of streets and intersections, I am not just a mode of transportation, but a living, breathing reflection of society itself. I am a witness to its complexities, its contradictions, and its capacity for both division and connection.]
+\Thinks the [[Bus]]
 (set: $thinking_meter_text to &quot;Thinking: &quot; + (text:$thinking_meter) + &quot;%&quot;)
 (If: $thinking_meter &gt; 1)
 [(set:$thinking_meter_status to &quot;true&quot;)
-Its thinking is at $thinking_meter%
 (append: ?Sidebar)[$thinking_meter_text]
 ]
 
@@ -264,7 +297,13 @@ Its thinking is at $thinking_meter%
 (set:$feelings_meter_status to &quot;false&quot;)
 (set:$thinking_meter_status to &quot;false&quot;)
 
-&lt;!--(append: ?Sidebar)[Feelings: $feelings_meter%]--&gt;</tw-passagedata><tw-passagedata pid="17" name="standing person reading a book" tags="" position="1440,37" size="100,100">The person is reading fiercly. It doesn&#39;t seem to matter the limited space where it is.
+&lt;!--(append: ?Sidebar)[Feelings: $feelings_meter%]--&gt;
+
+&lt;span class=&quot;tiny-text&quot; style =&quot;position: absolute;
+    bottom: 2px; /* Adjust this value to change the vertical position */
+    left: 5px; /* Adjust this value to change the horizontal position */
+    font-size: 10px; /* Adjust this value to change the font size */ &quot;&gt;Version 0.3&lt;/span&gt;
+</tw-passagedata><tw-passagedata pid="17" name="standing person reading a book" tags="" position="1440,37" size="100,100">The person is reading fiercly. It doesn&#39;t seem to matter the limited space where it is.
 
 [[Compliment the book-&gt;happy]]
 [[Move on-&gt;people]] 
