@@ -315,7 +315,7 @@ Thinks the [[Bus]]
 &lt;span class=&quot;tiny-text&quot; style =&quot;position: absolute;
     bottom: 2px; /* Adjust this value to change the vertical position */
     left: 5px; /* Adjust this value to change the horizontal position */
-    font-size: 10px; /* Adjust this value to change the font size */ &quot;&gt;Version 0.4&lt;/span&gt;
+    font-size: 10px; /* Adjust this value to change the font size */ &quot;&gt;Version 0.5&lt;/span&gt;
 </tw-passagedata><tw-passagedata pid="17" name="standing person reading a book" tags="" position="1440,37" size="100,100">The person is reading fiercly. It doesn&#39;t seem to matter the limited space where it is.
 
 [[Compliment the book-&gt;happy]]
@@ -413,7 +413,8 @@ Thinks the [[Bus]]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="27" name="connects" tags="" position="827,201" size="100,100">The [[Bus]] is connected to the Bus Network v0.1.7.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="27" name="connects" tags="" position="827,201" size="100,100">(if:$feelings_meter &lt;40 and $thinking_meter&lt;40)
+[The [[Bus]] is connected to the Bus Network v0.1.7.
 It has a reach of 5 buses.
 
 The 39 is struggiling.
@@ -422,7 +423,404 @@ The 24 is going round and round endessly.
 The 110 is stuck on traffic.
 The 237 is getting old.
 
-Overall status 9%
+Overall status 9%]
+\(elseif:$feelings_meter &lt;60 and $thinking_meter&lt;60)
+[\
+The [[Bus]] is connected to the Bus Network v1.0.8.It has a reach of 10 buses.
+
+The 39 is ok.
+The 146 is happy.
+The 24 is focused.
+The 110 is moving a little.
+The 237 is fine.
+The 152 is feeling adventurous, eager to explore new routes.
+The 68 is feeling proud, having just completed its longest journey yet.
+The 87 is feeling lonely, longing for more passengers to fill its seats.
+The 57 is feeling frustrated, stuck in a perpetual cycle of maintenance delays.
+The 205 is feeling grateful, appreciating the smooth roads and clear skies ahead.
+
+Overall status 37%]
+
+\(elseif:$feelings_meter &lt;80 and $thinking_meter&lt;80)
+[\
+The [[Bus]] is connected to the Bus Network v2.1.3.
+It has a reach of 30 buses.
+
+The 39 is great.
+The 146 is very happy.
+The 24 is  very focused.
+The 110 is moving .
+The 237 is doing great.
+The 152 is feeling adventurous, eager to explore new routes.
+The 68 is feeling proud, having just completed its longest journey yet.
+The 87 is feeling lonely, longing for more passengers to fill its seats.
+The 57 is feeling frustrated, stuck in a perpetual cycle of maintenance delays.
+The 205 is feeling grateful, appreciating the smooth roads and clear skies ahead.
+The 121 is feeling curious, wondering what lies beyond its usual route.
+The 178 is feeling nostalgic, reminiscing about the days when it was the newest model on the block.
+The 63 is feeling determined, pushing through obstacles with unwavering resolve.
+The 92 is feeling restless, craving the excitement of a new destination.
+The 200 is feeling optimistic, believing that brighter days are just around the corner.
+The 79 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 69 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 132 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 241 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 321 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 5 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 119 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 226 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 54 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 55 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 125 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 144 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 58 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 136 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 11 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+
+
+Overall status 68%]
+\
+\(else:)
+[The [[Bus]] is connected to the Bus Network v5.0.0.
+It has a reach of 336 buses.
+
+The 311 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 280 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 258 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 327 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 229 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 262 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 297 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 167 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 252 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 260 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 238 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 222 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 207 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 169 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 195 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 249 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 279 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 182 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 79 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 69 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 132 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 241 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 321 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 5 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 119 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 226 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 54 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 55 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 125 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 144 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 58 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 136 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 11 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 159 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 131 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 270 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 4 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 268 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 235 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 127 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 140 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 299 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 25 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 117 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 107 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 91 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 315 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 187 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 215 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 181 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 35 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 277 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 175 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 3 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 163 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 115 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 283 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 112 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 76 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 86 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 332 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 255 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 185 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 250 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 94 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 68 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 90 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 64 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 73 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 336 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 166 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 278 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 316 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 301 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 36 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 174 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 147 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 313 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 89 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 126 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 148 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 39 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 194 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 221 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 160 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 312 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 289 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 244 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 111 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 267 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 285 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 46 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 82 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 137 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 74 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 42 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 245 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 179 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 85 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 273 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 109 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 253 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 31 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 93 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 173 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 314 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 53 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 263 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 61 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 180 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 214 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 80 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 286 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 243 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 15 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 154 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 303 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 170 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 298 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 49 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 237 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 325 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 72 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 152 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 205 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 77 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 257 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 38 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 319 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 233 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 134 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 294 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 24 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 12 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 13 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 96 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 293 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 206 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 81 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 210 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 329 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 157 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 317 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 59 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 66 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 101 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 208 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 304 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 202 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 102 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 168 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 305 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 176 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 224 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 183 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 87 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 1 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 88 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 158 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 116 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 120 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 259 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 162 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 108 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 209 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 27 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 265 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 65 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 281 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 141 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 275 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 242 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 204 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 331 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 135 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 60 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 284 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 201 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 212 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 192 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 248 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 37 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 19 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 48 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 99 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 51 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 239 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 269 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 63 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 322 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 21 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 130 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 142 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 251 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 34 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 133 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 171 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 227 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 121 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 276 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 282 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 151 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 196 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 10 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 230 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 199 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 320 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 236 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 219 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 220 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 186 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 232 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 324 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 106 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 122 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 197 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 213 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 246 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 254 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 33 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 143 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 40 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 100 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 328 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 266 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 75 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 335 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 264 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 330 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 50 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 23 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 184 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 308 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 128 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 188 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 67 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 295 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 190 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 306 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 113 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 9 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 323 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 114 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 14 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 44 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 150 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 26 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 146 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 272 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 247 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 16 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 2 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 334 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 333 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 124 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 104 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 309 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 6 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 18 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 156 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 218 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 225 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 216 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 52 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 300 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 198 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 318 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 17 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 223 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 149 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 234 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 153 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 302 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 8 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 92 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 291 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 45 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 98 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 193 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 217 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 56 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 256 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 103 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 164 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 62 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 287 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 83 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 78 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 310 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 274 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 203 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 228 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 32 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 288 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 118 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 57 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 290 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 178 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 172 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 231 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 271 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 326 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 177 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 307 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 165 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 211 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 191 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 261 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 129 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 138 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 296 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 47 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 123 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 71 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 139 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 97 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 155 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+The 7 is delighted, enjoying the sense of freedom and adventure that comes with each journey it undertakes.
+The 29 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 145 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 200 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 110 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 189 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 70 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 43 is blissful, its passengers&#39; contentment and serenity creating a peaceful atmosphere that envelops it like a warm embrace.
+The 95 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 240 is jubilant, its passengers&#39; laughter and chatter echoing through its interior as they share stories and experiences.
+The 20 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 30 is radiant with happiness, its headlights shining brightly as it guides passengers safely to their destinations.
+The 292 is ecstatic, its passengers&#39; smiles and expressions of joy reflecting the happiness they feel on board.
+The 161 is overjoyed, its wheels spinning with a sense of purpose and direction as it carries passengers to their destinations with ease and efficiency.
+The 41 is euphoric, its passengers&#39; gratitude and appreciation filling it with a sense of pride and satisfaction.
+
+Overall status 100%
+]
+
+
 
 [[Share insights to improve their performance]]
 [[Align the other buses to your thought]]</tw-passagedata><tw-passagedata pid="28" name="perceives" tags="" position="966,193" size="100,100">The [[Bus]] perceives [[landmarks]] on the [[street]].
@@ -566,10 +964,10 @@ Make it a [[beacon of hope]]]
 (if:$thinking_meter_status is &quot;true&quot;)[
 (append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="40" name="Share insights to improve their performance" tags="" position="189,138" size="100,100">The buses are performing better!
 
-Your feelings rise by 10%.
+Your feelings rise by 15%.
 
 Great day to be a [[Bus]]
-(put: $feelings_meter + 10 into $feelings_meter)
+(put: $feelings_meter + 15 into $feelings_meter)
 
 (if:$feelings_meter_status is &quot;true&quot;)[
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
@@ -577,12 +975,12 @@ Great day to be a [[Bus]]
 (if:$thinking_meter_status is &quot;true&quot;)[
 (append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="41" name="Align the other buses to your thought" tags="" position="179,19" size="100,100">The buses think more like you!
 
-Your thinking rise by 10%.
+Your thinking rise by 15%.
 
 Great day to be a [[Bus]]
 
 
-(put: $thinking_meter + 10 into $thinking_meter)
+(put: $thinking_meter + 15 into $thinking_meter)
 
 (if:$feelings_meter_status is &quot;true&quot;)[
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
