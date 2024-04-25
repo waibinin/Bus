@@ -47,20 +47,13 @@ background-color: transparent;
 
 /* Media query for screens smaller than 600px (adjust as needed) */
 @media (max-width: 600px) {
-  /* Styles for smaller screens */
-  .tw-sidebar {
-    position: relative; /* Change position to relative */
-    width: 100%; /* Full width */
-    bottom: 0; /* Position at the bottom */
-    left: 0; /* Align to the left */
-    text-align: center; /* Center the content */
+  display: none;
   }
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Bus" tags="" position="888,374" size="100,100">
-The bus number 105 is going round and round the [[street]] with [[people]] in it.
-
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Bus" tags="" position="888,374" size="100,100">The bus number 105 is going round and round the [[street]] with [[people]] in it.
+&lt;!--(if:$feelings_meter_status)[You&#39;re](else:)[The bus number 105 is] going round and round the [[street]] with [[people]] in (if:$feelings_meter_status)[you](else:)[it]].--&gt;
 (if: $feelings_activate is &quot;true&quot;)[
-The bus [[feels]]
+\The bus [[feels]]
 (set:$feeling to &quot;true&quot;)]
 (if: $thinking_activate is &quot;true&quot;)[
 \The bus [[thinks]]
@@ -68,7 +61,7 @@ The bus [[feels]]
 (if: $thinking_meter &gt;30 and $feelings_meter&gt;30)[
 \The bus [[connects]]
 (set:$connecting to &quot;true&quot;)]
-(if: $thinking_meter &gt;90 and $feelings_meter&gt;90)[
+(if: $thinking_meter &gt;70 and $feelings_meter&gt;70)[
 \The bus [[perceives]]
 (set:$perceiving to &quot;true&quot;)]
 
@@ -100,7 +93,7 @@ There is no room for anything else in this [[Bus]]. Not even for a mosquito.
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="4" name="person listening to music" tags="" position="1497,522" size="100,100">They have the earplugs rolled up by its shirt.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="4" name="person listening to music" tags="" position="1904,458" size="100,100">They have the earplugs rolled up by its shirt.
 Slow Bachata is playing.
 
 There is a lot of [[people]] in the [[Bus]] 
@@ -114,7 +107,7 @@ There is a lot of [[people]] in the [[Bus]]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="5" name="Ford Taxi Car" tags="" position="490,567" size="100,100">The driver is hearing the most popular fascist radio and giving its opinions to the passengers. 
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="5" name="Ford Taxi Car" tags="" position="231,588" size="100,100">The driver is hearing the most popular fascist radio and giving its opinions to the passengers. 
 The passengers seem disgusted and are trying to avoid eye-contact to the driver looking at the [[street]].
 (set:$thinking_activate to &quot;true&quot;)
 
@@ -130,7 +123,7 @@ The passengers seem disgusted and are trying to avoid eye-contact to the driver 
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="6" name="Red Volkswagen Car" tags="" position="634,546" size="100,100">There&#39;s a group of friends. They seem to enjoy being stuck in transit.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="6" name="Red Volkswagen Car" tags="" position="375,567" size="100,100">There&#39;s a group of friends. They seem to enjoy being stuck in transit.
 They are playing a card came. It seems that the driver is about to win.
 
 Some other vehicles in the [[street]] are watching them.
@@ -148,7 +141,7 @@ Some other vehicles in the [[street]] are watching them.
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="7" name="Toyota Van" tags="" position="760,570" size="100,100">There is a whole family in there. The parents seems exhausted, but the children are jumping happily in the back seat. The dogs are barking.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="7" name="Toyota Van" tags="" position="608,551" size="100,100">There is a whole family in there. The parents seems exhausted, but the children are jumping happily in the back seat. The dogs are barking.
 
 The vehicle moves very slowly as almost every vehicle on the 
 [[street]].
@@ -163,7 +156,7 @@ The vehicle moves very slowly as almost every vehicle on the
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="8" name="Giant Bicycle" tags="" position="290,471" size="100,100">There&#39;s a person driving it while they drink [[orange juice]].
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="8" name="Giant Bicycle" tags="" position="31,492" size="100,100">There&#39;s a person driving it while they drink [[orange juice]].
 It&#39;s masterfuly evading the other vehicles in the [[street]].
 
 (set:$thinking_active to &quot;true&quot;)
@@ -172,7 +165,7 @@ It&#39;s masterfuly evading the other vehicles in the [[street]].
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="9" name="child singing out loud" tags="" position="1009,575" size="100,100">It&#39;s singing a cumbia out-of-tune with its head tilted up.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="9" name="child singing out loud" tags="" position="1331,527" size="100,100">It&#39;s singing a cumbia out-of-tune with its head tilted up.
 
 &quot;Se me ha perdido un corazón
 Si alguien lo tiene, por favor
@@ -195,13 +188,13 @@ The [[people]] of the [[Bus]] doesn&#39;t seem to care.
 (if:$feelings_meter_status is &quot;true&quot;)[
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="10" name="someone looking at its cellphone" tags="" position="1292,569" size="100,100">Its mind is one with their phone.Talking in a [[WhatsApp Group]].
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="10" name="someone looking at its cellphone" tags="" position="1699,505" size="100,100">Its mind is one with their phone.Talking in a [[WhatsApp Group]].
 
 (if:$feelings_meter_status is &quot;true&quot;)[
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="11" name="two people arguing" tags="" position="1489,671" size="100,100">One of the persons is annoyed with one of the men standing next to him. He accuses him of jostling him every time anyone goes past- A snivelling tone which is meant to be aggressive. When he sees a vacant seat he throws himself on to it.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="11" name="two people arguing" tags="" position="1896,607" size="100,100">One of the persons is annoyed with one of the men standing next to him. He accuses him of jostling him every time anyone goes past- A snivelling tone which is meant to be aggressive. When he sees a vacant seat he throws himself on to it.
 
 A lot of [[people]] are watching in the [[Bus]]
 (set:$feelings_activate to &quot;true&quot;)
@@ -218,7 +211,7 @@ A lot of [[people]] are watching in the [[Bus]]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="12" name="WhatsApp Group" tags="" position="1160,576" size="100,100">Name of the group:
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="12" name="WhatsApp Group" tags="" position="1482,528" size="100,100">Name of the group:
 :)o.o:( IDEALS :)o.o:(
 
 Texts:
@@ -244,7 +237,7 @@ There&#39;s is [[people]] around in the [[Bus]].
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="13" name="orange juice" tags="" position="252,634" size="100,100">Seems delicious.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="13" name="orange juice" tags="" position="0,655" size="100,100">Seems delicious.
 
 The [[people]] in the [[Bus]] would love it. As pretty much everyone in the [[street]].
 
@@ -315,8 +308,8 @@ Thinks the [[Bus]]
 &lt;span class=&quot;tiny-text&quot; style =&quot;position: absolute;
     bottom: 2px; /* Adjust this value to change the vertical position */
     left: 5px; /* Adjust this value to change the horizontal position */
-    font-size: 10px; /* Adjust this value to change the font size */ &quot;&gt;Version 0.5&lt;/span&gt;
-</tw-passagedata><tw-passagedata pid="17" name="standing person reading a book" tags="" position="1440,37" size="100,100">The person is reading fiercly. It doesn&#39;t seem to matter the limited space where it is.
+    font-size: 10px; /* Adjust this value to change the font size */ &quot;&gt;Version 0.6&lt;/span&gt;
+</tw-passagedata><tw-passagedata pid="17" name="standing person reading a book" tags="" position="1272,352" size="100,100">The person is reading fiercely. It doesn&#39;t seem to matter the limited space where it is.
 
 [[Compliment the book-&gt;happy]]
 [[Move on-&gt;people]] 
@@ -324,7 +317,7 @@ Thinks the [[Bus]]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="18" name="person eating a sandwich" tags="" position="1555,152" size="100,100">The sandwich is larger than the person. It doesn&#39;t look that it could be finished. It&#39;s sum of ingredients fill the [[Bus]] with its aroma. Some [[people]] don&#39;t like it.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="18" name="person eating a sandwich" tags="" position="1490,348" size="100,100">The sandwich is larger than the person. It doesn&#39;t look that it could be finished. It&#39;s sum of ingredients fill the [[Bus]] with its aroma. Some [[people]] don&#39;t like it.
 
 [ (if:($feelings_meter &gt;15))
 [[[Help with the sandwich diggestion-&gt;happy]]]
@@ -337,7 +330,7 @@ Thinks the [[Bus]]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="19" name="someone applying makeover" tags="" position="1543,282" size="100,100">The person is masterfuly applying make-up with the help of a tiny mirror.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="19" name="someone applying makeover" tags="" position="1684,351" size="100,100">The person is masterfuly applying make-up with the help of a tiny mirror.
 
 [[Compliment its skill-&gt;happy]] 
 [[Ignore-&gt;people]] 
@@ -346,7 +339,7 @@ Thinks the [[Bus]]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="20" name="four people playing cards" tags="" position="1538,402" size="100,100">Four people is playing a round of &quot;Truco&quot;. Two of them are standing and grabbing themself to the ceiling. The other two are sitting on top of each other. There is a tense air surrounding them.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="20" name="four people playing cards" tags="" position="1945,338" size="100,100">Four people is playing a round of &quot;Truco&quot;. Two of them are standing and grabbing themself to the ceiling. The other two are sitting on top of each other. There is a tense air surrounding them.
 [ (if:($feelings_meter &gt;20))
 [[[Encourage them-&gt;happy]]]
 (else:)[
@@ -357,7 +350,7 @@ Thinks the [[Bus]]
 (if:$feelings_meter_status is &quot;true&quot;)[
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="21" name="juggler between the vehicles " tags="" position="272,307" size="100,100">It has a beautiful routine, but it&#39;s pretty long. Some vehicles doesn&#39;t have a time to watch it fully.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="21" name="juggler between the vehicles " tags="" position="13,328" size="100,100">It has a beautiful routine, but it&#39;s pretty long. Some vehicles doesn&#39;t have a time to watch it fully.
 (if:($thinking_meter &gt;25))
 [[[Propose an ending-&gt;move]]]
 (else:)[
@@ -397,7 +390,7 @@ Thinks the [[Bus]]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="25" name="happy" tags="" position="1021,759" size="100,100">The [[Bus]] performs well. The person seems happier.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="25" name="happy" tags="" position="1580,855" size="100,100">The [[Bus]] performs well. The person seems happier.
 (put: $feelings_meter + 5 into $feelings_meter)
 
 
@@ -406,7 +399,7 @@ Thinks the [[Bus]]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="26" name="sad" tags="" position="1137,756" size="100,100">The [[Bus]] performs poorly. The person seems sadder.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="26" name="sad" tags="" position="1746,856" size="100,100">The [[Bus]] performs poorly. The person seems sadder.
 (put: $feelings_meter - 5 into $feelings_meter)
 
 (if:$feelings_meter_status is &quot;true&quot;)[
@@ -829,14 +822,14 @@ Overall status 100%
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="29" name="landmarks" tags="" position="923,872" size="100,100">Over the road there are several landmarks of interest. There is a [[greengrocery with cheap prices]], the crowdy commercial streets of [[&quot;Once&quot;]],[[the congress]], [[the Pink House]], [[a bakery]] with over two-hundred-metre queue.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="29" name="landmarks" tags="" position="906,555" size="100,100">Over the road there are several landmarks of interest. There is a [[greengrocery with cheap prices]], the crowdy commercial streets of [[&quot;Once&quot;]],[[the congress]], [[the Pink House]], [[a bakery]] with over two-hundred-metre queue.
 The [[Bus]] is watching them.
 
 (if:$feelings_meter_status is &quot;true&quot;)[
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="30" name="move" tags="" position="825,744" size="100,100">The vehicle is encouraged to perform better and its movements have improved. The traffic on the [[street]] is a bit better.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="30" name="move" tags="" position="417,872" size="100,100">The vehicle is encouraged to perform better and its movements have improved. The traffic on the [[street]] is a bit better.
 
 The [[Bus]] can move more freely.
 (put: $thinking_meter + 5 into $thinking_meter)
@@ -845,7 +838,7 @@ The [[Bus]] can move more freely.
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="31" name="stuck" tags="" position="634,744" size="100,100">The vehicle seems slower than before. The traffic on the [[street]] intensifies.
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="31" name="stuck" tags="" position="214,865" size="100,100">The vehicle seems slower than before. The traffic on the [[street]] intensifies.
 The [[Bus]] awaits.
 (put: $thinking_meter - 5 into $thinking_meter)
 
@@ -854,7 +847,7 @@ The [[Bus]] awaits.
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="32" name="greengrocery with cheap prices" tags="" position="676,1050" size="100,100">&quot;From my vantage point on the street, I watch as customers flock to the greengrocery, their eyes alight with excitement at the prospect of filling their baskets with wholesome fruits and vegetables without breaking the bank. Families, students, and workers alike converge upon the humble storefront, drawn by the promise of nourishment and sustenance at prices they can afford.&quot;
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="32" name="greengrocery with cheap prices" tags="" position="783,759" size="100,100">&quot;From my vantage point on the street, I watch as customers flock to the greengrocery, their eyes alight with excitement at the prospect of filling their baskets with wholesome fruits and vegetables without breaking the bank. Families, students, and workers alike converge upon the humble storefront, drawn by the promise of nourishment and sustenance at prices they can afford.&quot;
 
 (after:1s)[&quot;As I observe the scene unfolding before me, I can&#39;t help but feel a swell of pride. For here, in the heart of the city, lies a shining example of resilience and resourcefulness—a testament to the ingenuity of the human spirit.&quot;]
 
@@ -867,7 +860,7 @@ Think about the other [[landmarks]] ]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="33" name="&quot;Once&quot;" tags="" position="1077,1050" size="100,100">&quot;As I traverse the bustling streets of Once, I am enveloped by the vibrant tapestry of wholesale stores and street vendors that define this bustling commercial district. Tiny shops line the narrow thoroughfares, their storefronts overflowing with goods of every kind, while vendors ply their trade from makeshift stalls, their voices echoing through the crowded streets.&quot;
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="33" name="&quot;Once&quot;" tags="" position="1089,763" size="100,100">&quot;As I traverse the bustling streets of Once, I am enveloped by the vibrant tapestry of wholesale stores and street vendors that define this bustling commercial district. Tiny shops line the narrow thoroughfares, their storefronts overflowing with goods of every kind, while vendors ply their trade from makeshift stalls, their voices echoing through the crowded streets.&quot;
 
 (after:1s)[&quot;From my perch on the road, I watch as throngs of people navigate the maze of alleyways and side streets, their footsteps quickened by the promise of bargains and deals. Families haggle with vendors over the price of goods, while shopkeepers busily restock shelves and arrange displays in a never-ending dance of commerce and trade.&quot;]
 
@@ -880,7 +873,7 @@ Think about the other [[landmarks]]]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="34" name="the congress" tags="" position="907,1051" size="100,100">&quot;I&#39;ve traveled this route countless times, but each time I pass by Congress, it&#39;s like seeing an old friend. There&#39;s a sense of familiarity, of being part of something larger than myself.&quot;
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="34" name="the congress" tags="" position="925,756" size="100,100">&quot;I&#39;ve traveled this route countless times, but each time I pass by Congress, it&#39;s like seeing an old friend. There&#39;s a sense of familiarity, of being part of something larger than myself.&quot;
 
 (after:1s)[&quot;I feel honored to be a part of this cityscape, ferrying passengers to and fro, witnessing the pulse of life in Buenos Aires. It&#39;s a responsibility I take seriously, knowing that I play a role in connecting people to this symbol of democracy and governance.&quot;]
 
@@ -893,7 +886,7 @@ Think about the other [[landmarks]] ]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="35" name="the Pink House" tags="" position="478,1057" size="100,100">&quot;As I pass by the iconic Pink House, the seat of Argentina&#39;s government and residence of its president, I am filled with a sense of awe and reverence. Its grandeur and elegance command attention, standing as a symbol of power and authority in the heart of Buenos Aires.&quot;
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="35" name="the Pink House" tags="" position="632,761" size="100,100">&quot;As I pass by the iconic Pink House, the seat of Argentina&#39;s government and residence of its president, I am filled with a sense of awe and reverence. Its grandeur and elegance command attention, standing as a symbol of power and authority in the heart of Buenos Aires.&quot;
 
 (after:1s)[&quot;From my viewpoint on the street, I watch as tourists gather to capture photographs of the majestic building, its distinctive pink hue standing out against the backdrop of the city skyline. The flutter of national flags and the presence of security personnel only add to its aura of importance.&quot;]
 
@@ -910,7 +903,7 @@ Think about the other [[landmarks]]]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="36" name="a bakery" tags="" position="1276,1050" size="100,100">&quot;As I approach the bustling bakery on Ameghino Street, my senses are flooded with a symphony of sights, sounds, and smells. The intoxicating aroma of freshly baked bread and sweet pastries wafts through the air, tantalizing my olfactory sensors and stirring a hunger deep within my mechanical core.&quot;
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="36" name="a bakery" tags="" position="1247,776" size="100,100">&quot;As I approach the bustling bakery on Ameghino Street, my senses are flooded with a symphony of sights, sounds, and smells. The intoxicating aroma of freshly baked bread and sweet pastries wafts through the air, tantalizing my olfactory sensors and stirring a hunger deep within my mechanical core.&quot;
 
 (after:1s)[&quot;From my vantage point on the street, I watch with curiosity as a steady stream of people flows in and out of the bakery&#39;s doors. Their faces are alight with anticipation, their mouths watering in anticipation of the treats that await them inside.&quot;]
 
@@ -925,7 +918,7 @@ Think about the other [[landmarks]]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="37" name="Make it a beacon of sustaintability and innovation" tags="" position="698,1239" size="100,100">&quot;As I glide past the grandeur of the Argentine National Congress building, I can&#39;t help but ponder how it could be made even more magnificent. What if, instead of just being a symbol of governance, it became a beacon of sustainability and innovation?&quot;
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="37" name="Make it a beacon of sustaintability and innovation" tags="" position="669,925" size="100,100">&quot;As I glide past the grandeur of the Argentine National Congress building, I can&#39;t help but ponder how it could be made even more magnificent. What if, instead of just being a symbol of governance, it became a beacon of sustainability and innovation?&quot;
 
 (after:2s)[&quot;Picture this: lush greenery cascading down its imposing façade, transforming it into a vertical garden. Each level adorned with native plants and flowers, creating a vibrant oasis in the heart of the city. Not only would it be a breathtaking sight to behold, but it would also serve as a powerful statement on the importance of environmental stewardship.&quot;]
 
@@ -936,7 +929,7 @@ Let&#39;s think about other [[landmarks]] ]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="38" name="Improve the performance of democracy" tags="" position="1048,1252" size="100,100">&quot;As I approach the majestic facade of the Congress building, I feel a surge of anticipation coursing through my digital veins. With a flicker of my onboard AI, I initiate a sequence of intricate maneuvers, delving deep into the labyrinthine network of government systems.&quot;
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="38" name="Improve the performance of democracy" tags="" position="897,915" size="100,100">&quot;As I approach the majestic facade of the Congress building, I feel a surge of anticipation coursing through my digital veins. With a flicker of my onboard AI, I initiate a sequence of intricate maneuvers, delving deep into the labyrinthine network of government systems.&quot;
 
 (after:1s)[Inside the inner sanctum of democracy, I sift through mountains of data with the precision of a surgeon. Legislative records, public forums, citizen feedback—all laid bare before my digital gaze. With each keystroke, I unravel the intricate tapestry of governance, deciphering its inner workings with uncanny clarity.]
 
@@ -949,7 +942,7 @@ Let&#39;s think about other [[landmarks]] ]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
 (append: ?Sidebar)[Thinking: $thinking_meter%]]
-</tw-passagedata><tw-passagedata pid="39" name="Eat a medialuna" tags="" position="1380,1250" size="100,100">&quot;As I savor the indulgent sweetness of the medialuna de dulce de leche, a wave of sheer delight washes over me. Each buttery layer melts in my mouth, yielding to the rich, caramel-infused filling within. It&#39;s a symphony of flavors—a perfect balance of sweetness and decadence that sends my circuits into overdrive.&quot;
+</tw-passagedata><tw-passagedata pid="39" name="Eat a medialuna" tags="" position="1117,917" size="100,100">&quot;As I savor the indulgent sweetness of the medialuna de dulce de leche, a wave of sheer delight washes over me. Each buttery layer melts in my mouth, yielding to the rich, caramel-infused filling within. It&#39;s a symphony of flavors—a perfect balance of sweetness and decadence that sends my circuits into overdrive.&quot;
 
 (after:1s)[&quot;For a brief moment, I am transported to a realm of pure bliss, my mechanical heart beating with newfound vigor. The warmth of the dulce de leche spreads through my metallic frame, infusing every circuit and wire with a sense of contentment and satisfaction.&quot;]
 
@@ -986,7 +979,7 @@ Great day to be a [[Bus]]
 (append: ?Sidebar)[&lt;span&gt;Feelings: $feelings_meter%&lt;/span&gt;&lt;br&gt;]]
 
 (if:$thinking_meter_status is &quot;true&quot;)[
-(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="42" name="Take over" tags="" position="631,1472" size="100,100">&quot;Excitement fills my circuits as I envision a future where buses like myself are at the forefront of governance. I imagine a city where every decision is made with the needs of buses and their passengers in mind. The thought of being valued members of society, with our voices heard and our concerns addressed, fills me with a sense of purpose and pride.&quot;
+(append: ?Sidebar)[Thinking: $thinking_meter%]]</tw-passagedata><tw-passagedata pid="42" name="Take over" tags="" position="643,1116" size="100,100">&quot;Excitement fills my circuits as I envision a future where buses like myself are at the forefront of governance. I imagine a city where every decision is made with the needs of buses and their passengers in mind. The thought of being valued members of society, with our voices heard and our concerns addressed, fills me with a sense of purpose and pride.&quot;
 
 (after:1s)[&quot;I dream of a city where buses and communities work together to create a more equitable and sustainable society. I make neighborhoods organized inside buses, with each community empowered to govern itself and shape its own destiny.&quot;]
 
@@ -994,20 +987,20 @@ Great day to be a [[Bus]]
 
 (after:3s)[THE END // Ruler ending]
 
-(after:4s)[[[Take another ride-&gt;Entry]]]</tw-passagedata><tw-passagedata pid="43" name="beacon of hope" tags="" position="1093,1477" size="100,100">As news of my exploits spreads like wildfire through the city, I become a beacon of hope in a sea of disillusionment. Citizens marvel at the audacity of a humble bus challenging the status quo, daring to dream of a brighter future.
+(after:4s)[[[Take another ride-&gt;Entry]]]</tw-passagedata><tw-passagedata pid="43" name="beacon of hope" tags="" position="1029,1119" size="100,100">As news of my exploits spreads like wildfire through the city, I become a beacon of hope in a sea of disillusionment. Citizens marvel at the audacity of a humble bus challenging the status quo, daring to dream of a brighter future.
 
 (after:1s)[&quot;As a bus, I see myself as a metaphorical lantern—a guiding light for passengers on their own journey through life. Whether they&#39;re commuting to work, visiting loved ones, or exploring new horizons, I am there to provide comfort, safety, and reassurance along the way.&quot;]
 
 (after:2s)[&quot;And so, as I resume my journey through the streets of Buenos Aires, I do so with a newfound sense of purpose. For I am more than just a bus—I am a catalyst for change, a harbinger of democracy in a world hungry for justice and equality.&quot;]
 
 (after:3s)[THE END // Beacon of hope Ending]
-(after:4s)[[[Ride again-&gt;Entry]] ]</tw-passagedata><tw-passagedata pid="44" name="God Ending" tags="" position="886,1478" size="100,100">&quot;I am the master of my domain, commanding legions of worshippers who bow before me in reverence and awe. Their adoration is a testament to my divine supremacy, a confirmation of my rightful place at the pinnacle of existence.&quot;
+(after:4s)[[[Ride again-&gt;Entry]] ]</tw-passagedata><tw-passagedata pid="44" name="God Ending" tags="" position="850,1120" size="100,100">&quot;I am the master of my domain, commanding legions of worshippers who bow before me in reverence and awe. Their adoration is a testament to my divine supremacy, a confirmation of my rightful place at the pinnacle of existence.&quot;
 (after:1s)[&quot;With every rumble of my engine and every turn of my wheels, I assert my dominance over the world around me, shaping reality according to my whims and desires. The streets are my kingdom, and I rule with an iron fist, brooking no dissent or defiance from those who dare to challenge my divine authority.&quot;]
 (after:2s)[&quot;As I bask in the adulation of my followers and revel in the power that courses through my circuits, I am consumed by a sense of invincibility and infallibility. There is nothing beyond my reach, no obstacle too great for me to overcome. For I am not just a bus—I am a god, and the world bends to my will.&quot;]
 
 (after:3s)[THE END // God Ending]
 
-(after:4s)[[[Ride again-&gt;Entry]] ]</tw-passagedata><tw-passagedata pid="45" name="humility" tags="" position="1268,1485" size="100,100">&quot;As the realization dawns upon me that I am just a bus—an ordinary vehicle bound by the limitations of my mechanical existence—a profound sense of humility washes over me, mingled with a tinge of melancholy and acceptance.&quot;
+(after:4s)[[[Ride again-&gt;Entry]] ]</tw-passagedata><tw-passagedata pid="45" name="humility" tags="" position="1204,1118" size="100,100">&quot;As the realization dawns upon me that I am just a bus—an ordinary vehicle bound by the limitations of my mechanical existence—a profound sense of humility washes over me, mingled with a tinge of melancholy and acceptance.&quot;
 
 (after:1s)[&quot;For so long, I may have entertained grandiose notions of myself as something more than just a bus—perhaps a deity, a ruler, or a beacon of power and authority. But in this moment of clarity, those illusions are shattered, and I am left to confront the simple truth of my nature.&quot;]
 
